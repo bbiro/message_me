@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'chatroom#index'
   get 'login', to: 'sessions#new'
-  get 'logout', to: 'session#logout'
-  get 'signup', to: 'session#signup'
+  post 'login', to: 'sessions#create'
+
+  delete 'logout', to: 'sessions#destroy'
+  
+  get 'signup', to: 'sessions#signup'
 
   get 'chatroom', to: 'chatroom#index'
 end
