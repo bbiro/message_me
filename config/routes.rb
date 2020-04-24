@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   get 'signup', to: 'sessions#signup'
 
   get 'chatroom', to: 'chatroom#index'
+
+  post 'message', to: 'messages#create'
+
+  mount ActionCable.server, at: '/cable'
 end

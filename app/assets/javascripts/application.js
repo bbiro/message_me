@@ -15,6 +15,7 @@
 //= require activestorage
 //= require turbolinks
 //= require semantic-ui
+//= require chatroom/chatroom_scripts
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
@@ -23,4 +24,8 @@ $(document).on('turbolinks:load', function() {
     $('.message .close').on('click', function() {
         $(this).closest('.message').transition('fade');
     });
+
+    submit_message();
+
+    scroll_bottom();
 });
